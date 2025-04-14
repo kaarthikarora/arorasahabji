@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Personal Portfolio",
+        "image": "assets/images/projects/website/portfolio.png",
+        "description": "My personal portfolio website showcasing my work.",
+        "liveUrl": "http://kaarthikarora.rf.gd",
+        "techStack": ["HTML", "CSS", "JavaScript", "Responsive"]
+    },
+    {
+        "name": "Business Website",
+        "image": "assets/images/projects/website/business.png",
+        "description": "Has a Very beautiful and responsive design.",
+        "liveUrl": "http://chitrakalastudios.ct.ws/",
+        "techStack": ["Node.js", "HTML", "CSS"]
+    },
+    {
+        "name": "Coffee Shop Website",
+        "image": "assets/images/projects/website/coffee shop.png",
+        "description": "A dynamic blog platform with content management system.",
+        "liveUrl": "http://coffeecafesample.22web.org/",
+        "techStack": ["HTML", "CSS", "JavaScript", "Custom Theme"]
+    },
+    {
+        "name": "Restaurant Website",
+        "image": "assets/images/projects/website/RESTAURANT.png",
+        "description": "Modern restaurant website with menu and ordering system.",
+        "liveUrl": "404.html",
+        "techStack": ["HTML5", "CSS3", "JavaScript", "Custom Theme"]
+    },
+    {
+        "name": "Fitness Tracker",
+        "image": "assets/images/projects/website/FITNESS.png",
+        "description": "A comprehensive fitness tracking application.",
+        "liveUrl": "http://fitnesswebsitesample.rf.gd/",
+        "techStack": ["React", "Node.js", "MongoDB", "Charts.js"]
+    },
+    {
+        "name": "Love Website",
+        "image": "assets/images/projects/website/website 1.png",
+        "description": "A love proposal website with responsive design.",
+        "liveUrl": "http://kaarthikarora.ct.ws",
+        "techStack": ["HTML", "CSS", "JavaScript"]
+    }
+]

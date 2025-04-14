@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Gaming Banner",
+        "description": "Digital Marketing Campaign",
+        "image": "assets/images/projects/BANNER/gaming banner.png"
+    },
+    {
+        "name": "Social Media Banner",
+        "description": "Social Media Marketing",
+        "image": "assets/images/projects/BANNER/SOCIAL MEDIA.png"
+    },
+    {
+        "name": "GYM Banner",
+        "description": "Brand Promotion",
+        "image": "assets/images/projects/BANNER/GYM.png"
+    },
+    {
+        "name": "Restaurant Banner",
+        "description": "Food Branding",
+        "image": "assets/images/projects/BANNER/RESTAURANT.png"
+    },
+    {
+        "name": "Watch Banner",
+        "description": "Product Promotion",
+        "image": "assets/images/projects/BANNER/WATCH.png"
+    },
+    {
+        "name": "Business Banner",
+        "description": "Corporate Branding",
+        "image": "assets/images/projects/BANNER/PRATIBIMBDESIGNS.png"
+    },
+    {
+        "name": "Website Banner",
+        "description": "Web Design",
+        "image": "assets/images/projects/BANNER/WEBSITE DESIGNS.png"
+    },
+    {
+        "name": "Sale Banner",
+        "description": "E-commerce Promotion",
+        "image": "assets/images/projects/BANNER/SALE.png"
+    }
+]
