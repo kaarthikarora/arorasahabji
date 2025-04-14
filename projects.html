@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Kaarthik Dass Arora</title>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/projects.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Favicon -->
+    <link id='favicon' rel="shortcut icon" href="./assets/images/ME.jpg" type="image/x-png">
+    
+    <style>
+        /* Prevent scrolling during intro animation */
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        /* Ensure content is hidden until intro completes */
+        main {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        /* Black and white intro styling */
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: all 0.8s ease;
+        }
+        
+        .logo-header {
+            text-align: center;
+        }
+        
+        .intro-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .letter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(20px);
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .welcome-text {
+            color: #fff;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .welcome-text p {
+            font-size: 1.5rem;
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
+        
+        .credits {
+            font-style: italic;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* Animation for letters */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Fade out animation */
+        .intro.fade {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        /* Add subtle glow effect */
+        .intro-logo:hover .letter {
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+            transition: text-shadow 0.3s ease;
+        }
+        
+        /* Project Category Sections */
+        .project-category {
+            padding: 4rem 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .category-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #2c3e50, #4a6491);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .category-description {
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Work List Grid */
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .work {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .work:hover {
+            transform: translateY(-10px);
+        }
+        
+        .work img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(rgba(0,0,0,0.1), #2c3e50);
+            color: #fff;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .work:hover .layer {
+            transform: translateY(0);
+        }
+        
+        /* View More Button */
+        .view-more-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #2c3e50, #4a6491);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .view-more-btn:hover {
+            background: linear-gradient(45deg, #4a6491, #2c3e50);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .view-more-btn .arrow-icon {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .view-more-btn:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+        
+        /* Bounce Animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        /* Clients Section */
+        #clients {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: #111;
+        }
+        
+        .clients-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .client-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            color: #aaa;
+        }
+        
+        .client-testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .testimonial {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .testimonial p {
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial h4 {
+            color: #4a6491;
+        }
+        
+        /* Footer Section */
+        .footer {
+            background-color: #111;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .box {
+            text-align: center;
+        }
+        
+        .box h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .box p, .box a {
+            color: #aaa;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .box a:hover {
+            color: #4a6491;
+        }
+        
+        .share {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        
+        .share a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .share a:hover {
+            color: #4a6491;
+        }
+        
+        .credit {
+            margin-top: 2rem;
+            color: #aaa;
+            font-size: 1rem;
+        }
+        
+        .credit a {
+            color: #4a6491;
+        }
+        
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Intro Animation -->
+<div class="intro" id="intro">
+    <div class="logo-header">
+        <div class="intro-logo">
+            <span class="letter">A</span>
+            <span class="letter">R</span>
+            <span class="letter">O</span>
+            <span class="letter">R</span>
+            <span class="letter">A</span>
+            <span class="letter">&nbsp;</span>
+            <span class="letter">S</span>
+            <span class="letter">A</span>
+            <span class="letter">H</span>
+            <span class="letter">A</span>
+            <span class="letter">B</span>
+            <span class="letter">&nbsp;</span>
+            <span class="letter">J</span>
+            <span class="letter">I</span>
+        </div>
+        <div class="welcome-text">
+            <p>Welcome to My Design Portfolio</p>
+            <p class="credits">- Crafted with passion by Kaarthik Arora</p>
+        </div>
+    </div>
+</div>
+
+<main>
+    <header>
+        <a href="/index.html" class="logo"><i class="fab fa-node-js"></i> Kaarthik Dass Arora</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/index.html#home">Home</a></li>
+                <li><a href="/index.html#about">About</a></li>
+                <li><a href="/index.html#skills">Skills</a></li>
+                <li><a href="/index.html#education">Education</a></li>
+                <li><a href="/index.html#work">Work</a></li>
+                <li><a href="/experience/index.html">Experience</a></li>
+                <li><a href="/index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="all-projects">
+        <p class="section__text">Browse Through My</p>
+        <h1 class="title">Creative Portfolio</h1>
+        
+        <!-- Logos & Posters Section -->
+        <div class="project-category" id="logos-posters">
+            <div class="category-header">
+                <h2 class="category-title">Logos & Posters</h2>
+                <p class="category-description">Collection of my logo designs and creative posters</p>
+            </div>
+            <div class="work-list">
+                <!-- Logo/Poster Projects -->
+                <a href="assets/images/projects/designs/about-pic.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/about-pic.png" alt="About Picture">
+                        <div class="layer">
+                            <h3>About Picture</h3>
+                            <p>Digital Design</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="assets/images/projects/designs/apricort2.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/apricort2.png" alt="Apricot Design">
+                        <div class="layer">
+                            <h3>Apricot Design</h3>
+                            <p>Brand Design</p>
+                        </div>
+                    </div>
+                </a>
+                
+               
+                <a href="assets/images/projects/designs/blith3.1.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/blith3.1.png" alt="BLTLTB 3.1">
+                        <div class="layer">
+                            <h3>BLTLTB 3.1</h3>
+                            <p>Advanced Typography</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/chit.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/chit.jpg" alt="Chitrakala Art">
+                        <div class="layer">
+                            <h3>Chitrakala Art</h3>
+                            <p>Traditional Design</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/Falling dark.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/Falling dark.png" alt="Falling Dark">
+                        <div class="layer">
+                            <h3>Falling Dark</h3>
+                            <p>Artistic Design</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/Falling.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/Falling.png" alt="Falling Light">
+                        <div class="layer">
+                            <h3>Falling Light</h3>
+                            <p>Artistic Design</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/Heaven.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/Heaven.png" alt="Heaven">
+                        <div class="layer">
+                            <h3>Heaven</h3>
+                            <p>Digital Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/hello.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/hello.jpg" alt="Hello Design">
+                        <div class="layer">
+                            <h3>Hello Design</h3>
+                            <p>Creative Concept</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/maxresdefault.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/maxresdefault.jpg" alt="Maxres Default">
+                        <div class="layer">
+                            <h3>Maxres Default</h3>
+                            <p>YouTube Design</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/messi wallpaper.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/messi wallpaper.jpg" alt="Messi Wallpaper">
+                        <div class="layer">
+                            <h3>Messi Wallpaper</h3>
+                            <p>Sports Design</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/nova.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/nova.png" alt="Nova">
+                        <div class="layer">
+                            <h3>Nova</h3>
+                            <p>Event Design</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/pexels-kalistro-1327867553-25785791.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/pexels-kalistro-1327867553-25785791.jpg" alt="Kalistro Art">
+                        <div class="layer">
+                            <h3>Kalistro Art</h3>
+                            <p>Digital Painting</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <!-- Newly Added Projects from attachments -->
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-52-39.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-52-39.jpg" alt="Abstract Design 1">
+                        <div class="layer">
+                            <h3>Abstract Design 1</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-52-46.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-52-46.jpg" alt="Abstract Design 2">
+                        <div class="layer">
+                            <h3>Abstract Design 2</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-52-52.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-52-52.jpg" alt="Abstract Design 3">
+                        <div class="layer">
+                            <h3>Abstract Design 3</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-52-57.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-52-57.jpg" alt="Abstract Design 4">
+                        <div class="layer">
+                            <h3>Abstract Design 4</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-53-02.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-53-02.jpg" alt="Abstract Design 5">
+                        <div class="layer">
+                            <h3>Abstract Design 5</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-53-10.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-53-10.jpg" alt="Abstract Design 6">
+                        <div class="layer">
+                            <h3>Abstract Design 6</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-53-14.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-53-14.jpg" alt="Abstract Design 7">
+                        <div class="layer">
+                            <h3>Abstract Design 7</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-53-34.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-53-34.jpg" alt="Abstract Design 8">
+                        <div class="layer">
+                            <h3>Abstract Design 8</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-53-41.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-53-41.jpg" alt="Abstract Design 9">
+                        <div class="layer">
+                            <h3>Abstract Design 9</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-53-46.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-53-46.jpg" alt="Abstract Design 10">
+                        <div class="layer">
+                            <h3>Abstract Design 10</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/photo_2025-03-22_17-53-50.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/photo_2025-03-22_17-53-50.jpg" alt="Abstract Design 11">
+                        <div class="layer">
+                            <h3>Abstract Design 11</h3>
+                            <p>Experimental Art</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/pic1.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/pic1.jpg" alt="Portrait 1">
+                        <div class="layer">
+                            <h3>Portrait 1</h3>
+                            <p>Photography</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/pic 2.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/pic 2.jpg" alt="Portrait 2">
+                        <div class="layer">
+                            <h3>Portrait 2</h3>
+                            <p>Photography</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/pic 3.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/pic 3.jpg" alt="Portrait 3">
+                        <div class="layer">
+                            <h3>Portrait 3</h3>
+                            <p>Photography</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/random bltth logo attempt.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/random blith logo attempt.png" alt="Logo Attempt">
+                        <div class="layer">
+                            <h3>Logo Attempt</h3>
+                            <p>Branding Concept</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/random edit1.jpg">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/random edit1.jpg" alt="Random Edit">
+                        <div class="layer">
+                            <h3>Random Edit</h3>
+                            <p>Creative Experiment</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/Sukoon.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/Sukoon.png" alt="Sukoon Design">
+                        <div class="layer">
+                            <h3>Sukoon Design</h3>
+                            <p>Peace Concept</p>
+                        </div>
+                    </div>
+                </a>
+        
+                <a href="assets/images/projects/designs/tshirt idea1.png">
+                    <div class="work">
+                        <img src="assets/images/projects/designs/tshirt idea1.png" alt="T-Shirt Design">
+                        <div class="layer">
+                            <h3>T-Shirt Design</h3>
+                            <p>Fashion Concept</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Add more logo/poster projects as needed -->
+            </div>
+            <div style="text-align: center;">
+                <a href="#logos-posters" class="view-more-btn">
+                    View More Logos & Posters
+                    <i class="fas fa-arrow-right arrow-icon"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Banner Designs Section -->
+        <div class="project-category" id="banner-designs">
+            <div class="category-header">
+                <h2 class="category-title">Banner Designs</h2>
+                <p class="category-description">Professional banners created for various clients</p>
+            </div>
+            <div class="work-list">
+                <!-- Banner Projects -->
+                <a href="assets/images/projects/BANNER/gaming banner.png">
+                    <div class="work">
+                        <img src="assets/images/projects/BANNER/gaming banner.png" alt="Banner Design">
+                        <div class="layer">
+                            <h3>Promotional Banner</h3>
+                            <p>Digital Marketing</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Add more banner projects as needed -->
+            </div>
+            <div style="text-align: center;">
+                <a href="banner.html" class="view-more-btn">
+                    View More Banners
+                    <i class="fas fa-arrow-right arrow-icon bounce"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Website Designs Section -->
+        <div class="project-category" id="website-designs">
+            <div class="category-header">
+                <h2 class="category-title">Website Designs</h2>
+                <p class="category-description">Custom websites developed with modern technologies</p>
+            </div>
+            <div class="work-list">
+                <!-- Website Projects -->
+                <a href="https://kaarthikarora.rf.gd" target="_blank">
+                    <div class="work">
+                        <img src="assets/images/projects/website/portfolio.png" alt="Portfolio Website Design">
+                        <div class="layer">
+                            <h3>Portfolio Website</h3>
+                            <p>For Kaarthik Arora</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Add more website projects as needed -->
+            </div>
+            <div style="text-align: center;">
+                <a href="website.html" class="view-more-btn">
+                    View More Websites
+                    <i class="fas fa-arrow-right arrow-icon bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients">
+        <p class="section__text">Our Satisfied</p>
+        <h1 class="title">Clients</h1>
+        <div class="clients-container">
+            <div class="client-stats">
+                <div class="stat-item">
+                    <h2>50+</h2>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h2>100+</h2>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h2>3+</h2>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+            <div class="client-testimonials">
+                <div class="testimonial">
+                    <p>"Exceptional creativity and professionalism. Delivered beyond expectations!"</p>
+                    <h4>- Pratibimb Designs</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Outstanding design work. Really captured our brand essence."</p>
+                    <h4>- Chitrakala Studios</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Innovative solutions and excellent communication throughout the project."</p>
+                    <h4>- Creative Client</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>contact info</h3>
+                <p> <i class="fas fa-phone"></i>+91 75298-34770</p>
+                <p> <i class="fas fa-envelope"></i>kartikdassarora@gmail.com</p>
+                <p> <i class="fas fa-map-marked-alt"></i>Ludhiana, Punjab, India,141008</p>
+                <div class="share">
+                    <a href="https://www.linkedin.com/in/kartik-arora-119853272/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
+                    <a href="mailto:kartikdassarora@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+                    <a href="https://www.instagram.com/kaarthikarora" class="fab fa-instagram" aria-label="Instagram" target="_blank"></a>
+                    <a href="https://www.instagram.com/pratibimb_designs" class="fab fa-dev" aria-label="Pratibimb Designs" target="_blank"></a>
+                    <a href="https://t.me/kaarthik_arora" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.instagram.com/kaarthikarora"> Kaarthik Dass Arora</a></h1>
+    </section>
+</main>
+
+<script>
+    // Enhanced Black & White Intro Animation
+    document.addEventListener('DOMContentLoaded', () => {
+        const intro = document.querySelector('.intro');
+        const letters = document.querySelectorAll('.letter');
+        const mainContent = document.querySelector('main');
+        
+        // Animate letters one by one with staggered delay
+        letters.forEach((letter, i) => {
+            setTimeout(() => {
+                letter.style.animation = `fadeInUp 0.6s forwards`;
+                letter.style.animationDelay = `${i * 0.1}s`;
+            }, 100);
+        });
+        
+        // After animation completes
+        setTimeout(() => {
+            intro.classList.add('fade');
+            mainContent.style.opacity = '1';
+            document.body.style.overflow = '';
+            
+            // Remove intro element after fade out
+            setTimeout(() => {
+                intro.style.display = 'none';
+            }, 800);
+        }, 3500);
+        
+        // Handle browser back/forward navigation
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                intro.style.display = 'none';
+                mainContent.style.opacity = '1';
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

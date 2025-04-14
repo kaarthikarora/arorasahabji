@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="kaarthik dass arora, frontend developer, logo designer, graphic designer" />
+  <meta name="description"
+    content="Welcome to Kaarthik's Portfolio. Frontend Developer, Logo Designer, and Graphic Designer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon -->
+  <link id='favicon' rel="shortcut icon" href="./assets/images/ME.jpg" type="image/x-png">
+  <title>Portfolio | Kaarthik Dass Arora</title>
+
+  <style>
+    /* Intro Animation Styles */
+    .intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .logo-header {
+      text-align: center;
+    }
+
+    .intro-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .letter {
+      color: #000000;
+      font-size: 5rem;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.4s ease;
+      transform: translateY(40px);
+      opacity: 0;
+      margin: 0 3px;
+    }
+
+    .welcome-text {
+      color: #000000;
+      font-size: 2.5rem;
+      font-family: 'Poppins', sans-serif;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      margin-top: 2rem;
+    }
+
+    .welcome-text .credits {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      color: #555;
+    }
+
+    /* Animation classes */
+    .letter.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .welcome-text.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Fade out animation */
+    .intro.fade {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+
+  <!-- Image Optimizer -->
+  <script src="./assets/js/image-optimizer.js"></script>
+</head>
+
+<body oncontextmenu="return false">
+
+  <!-- Intro Animation -->
+  <div class="intro" id="intro">
+    <div class="logo-header">
+      <div class="intro-logo">
+        <span class="letter">A</span>
+        <span class="letter">R</span>
+        <span class="letter">O</span>
+        <span class="letter">R</span>
+        <span class="letter">A</span>
+        <span class="letter">&nbsp;</span>
+        <span class="letter">S</span>
+        <span class="letter">A</span>
+        <span class="letter">H</span>
+        <span class="letter">A</span>
+        <span class="letter">B</span>
+        <span class="letter">&nbsp;</span>
+        <span class="letter">J</span>
+        <span class="letter">I</span>
+      </div>
+      <div class="welcome-text">
+        <p>Welcome to Kaarthik's Portfolio</p>
+        <p class="credits">- Crafted with ❤️ by Kaarthik Arora</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- pre loader -->
+  <!-- <div class="loader-container">
+  <img draggable="false" src="./assets/images/preloader.gif" alt="">
+</div> -->
+
+  <!-- navbar starts -->
+  <header>
+    <a href="/" class="logo"><i class="fab fa-node-js"></i> Kaarthik Dass Arora </a>
+
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="experience/index.html">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- navbar ends -->
+
+
+  <!-- hero section starts -->
+  <section class="home" id="home">
+    <div id="particles-js"></div>
+
+    <div class="content">
+      <h2>Hi There,<br /> I'm Kaarthik Dass <span>Arora</span></h2>
+      <p>i am into <span class="typing-text"></span></p>
+      <a href="#about" class="btn"><span>About Me</span>
+        <i class="fas fa-arrow-circle-down"></i>
+      </a>
+      <div class="socials">
+        <ul class="social-icons">
+          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/kartik-arora-119853272/"
+              target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="github" aria-label="GitHub" href="https://github.com/kaarthikarora" target="_blank"><i
+                class="fab fa-github"></i></a></li>
+          <li><a class="twitter" aria-label="Twitter" href="https://twitter.com/kaarthikarora" target="_blank"><i
+                class="fab fa-twitter"></i></a></li>
+          <li><a class="telegram" aria-label="Telegram" href="https://t.me/kaarthik_arora" target="_blank"><i
+                class="fab fa-telegram-plane"></i></a></li>
+          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/kaarthikarora"
+              target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a class="dev" aria-label="Dev" href="https://www.instagram.com/pratibimb_designs" target="_blank"><i
+                class="fab fa-dev"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="image">
+      <img draggable="false" class="tilt lazy" data-src="./assets/images/ME.jpg" data-critical="true" src="./assets/images/ME.jpg" alt="Kaarthik Dass Arora">
+    </div>
+  </section>
+  <!-- hero section ends -->
+
+
+  <!-- about section starts -->
+  <section class="about" id="about">
+    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+
+    <div class="row">
+
+      <div class="image">
+        <img draggable="false" class="tilt" src="./assets/images/photo_2025-04-05_12-33-32.jpg" alt="">
+      </div>
+      <div class="content">
+        <h3>I'm Kaarthik</h3>
+        <span class="tag">Graphic & Web Designer</span>
+
+        <p>I am a 17-year-old passionate Graphic and Web Designer based in India.
+          I am the owner of Pratibimb Designs and co-owner of Chitrakala Studios.
+          I specialize in creating stunning visual designs and modern websites.
+          Currently completed my 12th from Amrit Indo Canadian Academy with PCM, AI, and IP.</p>
+
+        <div class="box-container">
+          <div class="box">
+            <p><span> age: </span> 17</p>
+          </div>
+          <div class="box">
+            <p><span> instagram : </span> @kaarthikarora / @pratibimb_designs</p>
+            <p><span> place : </span> India</p>
+          </div>
+        </div>
+
+        <div class="resumebtn">
+          <a href="./assets/resume/Kaarthik Dass Arora's Resume.pdf" target="_blank"
+            class="btn"><span>Resume</span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- about section ends -->
+
+  <!-- skills section starts -->
+  <section class="skills" id="skills">
+    <h2 class="heading"><i class="fas fa-palette"></i> My <span>Skills</span></h2>
+
+    <div class="skills-container">
+      <div class="skills-grid">
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/48/000000/adobe-photoshop.png" />
+          <h3>Photoshop</h3>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/48/000000/adobe-illustrator.png" />
+          <h3>Illustrator</h3>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/48/000000/canva.png" />
+          <h3>Canva Pro</h3>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" />
+          <h3>VS Code</h3>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/48/000000/html-5.png" />
+          <h3>HTML5</h3>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/48/000000/css3.png" />
+          <h3>CSS3</h3>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/48/000000/javascript.png" />
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-item">
+          <img data-src="https://img.icons8.com/color/48/000000/python.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Python" loading="lazy" />
+          <h3>Python</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- skills section ends -->
+
+
+  <!-- education section starts -->
+  <section class="education" id="education">
+
+    <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
+
+    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
+
+    <div class="box-container">
+
+      <div class="box">
+        <div class="image">
+          <img draggable="false" src="./assets/images/educat/school.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Higher Secondary Education</h3>
+          <p>Amrit Indo Canadian Academy</p>
+          <p>PCM with AI and IP</p>
+          <h4>2025 | Completed</h4>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- education section ends -->
+
+
+  <!-- work project section starts -->
+  <section class="portfolio-link" id="work">
+    <h2 class="heading"><i class="fas fa-palette"></i> My <span>Portfolio</span></h2>
+    <div class="view-portfolio">
+      <a href="projects.html" class="btn">
+        <span>View My Portfolio</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="./assets/resume/Kaarthik Dass Arora's Resume.pdf " class="btn" style="margin-left: 1rem;">
+        <span>View My Resume</span>
+        <i class="fas fa-file-pdf"></i>
+      </a>
+    </div>
+  </section>
+  <!-- work project section ends -->
+
+  <!-- experience section starts -->
+  <section class="experience" id="experience">
+    <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
+    <div class="timeline">
+      <div class="container right">
+        <div class="content">
+          <div class="tag">
+            <h2>Pratibimb Designs</h2>
+          </div>
+          <div class="desc">
+            <h3>Founder & Lead Designer</h3>
+            <p>2025 - Present</p>
+            <p>Creating brand identities, social media designs, and digital artwork for clients</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container left">
+        <div class="content">
+          <div class="tag">
+            <h2>Chitrakala Studios</h2>
+          </div>
+          <div class="desc">
+            <h3>Co-owner & Creative Director</h3>
+            <p>2025 - Present</p>
+            <p>Collaborating on artistic projects and digital design solutions</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container right">
+        <div class="content">
+          <div class="tag">
+            <h2>Freelance Designer</h2>
+          </div>
+          <div class="desc">
+            <h3>Graphic & Web Designer</h3>
+            <p>2022 - Present</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- experience section ends -->
+
+  <!-- contact section starts -->
+  <section class="contact" id="contact">
+
+    <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
+
+    <div class="container">
+      <div class="content">
+        <div class="image-box">
+          <img draggable="false" src="./assets/images/contact1.png" alt="">
+        </div>
+        <form id="contact-form">
+
+          <div class="form-group">
+            <div class="field">
+              <input type="text" name="name" placeholder="Name" required>
+              <i class='fas fa-user'></i>
+            </div>
+            <div class="field">
+              <input type="text" name="email" placeholder="Email" required>
+              <i class='fas fa-envelope'></i>
+            </div>
+            <div class="field">
+              <input type="text" name="phone" placeholder="Phone">
+              <i class='fas fa-phone-alt'></i>
+            </div>
+            <div class="message">
+              <textarea placeholder="Message" name="message" required></textarea>
+              <i class="fas fa-comment-dots"></i>
+            </div>
+          </div>
+          <div class="button-area">
+            <button type="submit">
+              Submit <i class="fa fa-paper-plane"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- contact section ends -->
+
+
+
+  <!-- footer section starts -->
+  <section class="footer">
+
+    <div class="box-container">
+
+      <div class="box">
+        <h3>Kaarthik's Portfolio</h3>
+        <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br /> <br /> Keep Rising
+          🚀. Connect with me over live chat!</p>
+      </div>
+
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
+        <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
+        <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
+        <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
+        <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
+        <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
+      </div>
+
+      <div class="box">
+        <h3>contact info</h3>
+        <p> <i class="fas fa-phone"></i>+91 75298-34770</p>
+        <p> <i class="fas fa-envelope"></i>kartikdassarora@gmail.com</p>
+        <p> <i class="fas fa-map-marked-alt"></i>Ludhiana, Punjab, India,141008</p>
+        <div class="share">
+
+          <a href="https://www.linkedin.com/in/kartik-arora-119853272/" class="fab fa-linkedin" aria-label="LinkedIn"
+            target="_blank"></a>
+          <a href="mailto:kartikdassarora@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+          <a href="https://www.instagram.com/kaarthikarora" class="fab fa-instagram" aria-label="Instagram"
+            target="_blank"></a>
+          <a href="https://www.instagram.com/pratibimb_designs" class="fab fa-dev" aria-label="Pratibimb Designs"
+            target="_blank"></a>
+          <a href="https://t.me/lifecode5" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a
+        href="https://www.instagram.com/kaarthikarora"> Kaarthik Dass Arora</a></h1>
+
+
+  </section>
+  <!-- footer section ends -->
+
+
+  <!-- scroll top btn -->
+  <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
+  <!-- scroll back to top -->
+
+
+  <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
+  <!-- jquery cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- typed.js cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
+    integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- particle.js links -->
+  <script src="./assets/js/particles.min.js"></script>
+  <script src="./assets/js/app.js"></script>
+
+  <!-- vanilla tilt.js links -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
+    integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- scroll reveal anim -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    // Intro Animation Script
+    document.addEventListener('DOMContentLoaded', () => {
+      const intro = document.querySelector('.intro');
+      const letters = document.querySelectorAll('.letter');
+      const welcomeText = document.querySelector('.welcome-text');
+
+      // Check if intro animation should play (only on first visit)
+      if (!sessionStorage.getItem('introShown')) {
+        // Prevent scrolling during animation
+        document.body.style.overflow = 'hidden';
+
+        // Animate letters one by one
+        letters.forEach((letter, i) => {
+          setTimeout(() => {
+            letter.classList.add('active');
+          }, 100 * i);
+        });
+
+        // Animate welcome text after letters
+        setTimeout(() => {
+          welcomeText.classList.add('active');
+        }, 100 * letters.length + 300);
+
+        // Fade out intro after everything is shown
+        setTimeout(() => {
+          intro.classList.add('fade');
+          setTimeout(() => {
+            intro.style.display = 'none';
+            document.body.style.overflow = '';
+          }, 500);
+        }, 3000);
+
+        // Set flag in sessionStorage
+        sessionStorage.setItem('introShown', 'true');
+      } else {
+        // If already shown, hide immediately
+        intro.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- Your existing script.js -->
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

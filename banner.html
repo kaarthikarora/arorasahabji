@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Designs | Kaarthik Dass Arora</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Favicon -->
+    <link id='favicon' rel="shortcut icon" href="./assets/images/ME.jpg" type="image/x-png">
+
+    <style>
+        /* Intro Animation Styles */
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .logo-header {
+            text-align: center;
+        }
+
+        .intro-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .letter {
+            color: #000000;
+            font-size: 5rem;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.4s ease;
+            transform: translateY(40px);
+            opacity: 0;
+            margin: 0 3px;
+        }
+
+        .welcome-text {
+            color: #000000;
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            margin-top: 2rem;
+        }
+
+        .welcome-text .credits {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            color: #555;
+        }
+
+        /* Animation classes */
+        .letter.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .welcome-text.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Fade out animation */
+        .intro.fade {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .gallery-container {
+            padding: 120px 20px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--main-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false">
+    <!-- Intro Animation -->
+    <div class="intro" id="intro">
+        <div class="logo-header">
+            <div class="intro-logo">
+                <span class="letter">A</span>
+                <span class="letter">R</span>
+                <span class="letter">O</span>
+                <span class="letter">R</span>
+                <span class="letter">A</span>
+                <span class="letter">&nbsp;</span>
+                <span class="letter">S</span>
+                <span class="letter">A</span>
+                <span class="letter">H</span>
+                <span class="letter">A</span>
+                <span class="letter">B</span>
+                <span class="letter">&nbsp;</span>
+                <span class="letter">J</span>
+                <span class="letter">I</span>
+            </div>
+            <div class="welcome-text">
+                <p>Navigating to Beautiful Banners</p>
+                <p class="credits">- Crafted with ❤️ by Kaarthik Arora</p>
+            </div>
+        </div>
+    </div>
+    <!-- navbar starts -->
+    <header>
+        <a href="/index.html" class="logo"><i class="fab fa-node-js"></i> Kaarthik Dass Arora</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/index.html#home">Home</a></li>
+                <li><a href="/index.html#about">About</a></li>
+                <li><a href="/index.html#skills">Skills</a></li>
+                <li><a href="/index.html#education">Education</a></li>
+                <li><a href="/index.html#work">Work</a></li>
+                <li><a href="/experience/index.html">Experience</a></li>
+                <li><a href="/index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- navbar ends -->
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <h2 class="heading">Banner <span>Gallery</span></h2>
+        <div class="gallery-grid" id="bannerGallery">
+            <!-- Content will be loaded dynamically -->
+        </div>
+    </section>
+    <!-- Gallery Section Ends -->
+
+    <!-- footer section starts -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>contact info</h3>
+                <p> <i class="fas fa-phone"></i>+91 75298-34770</p>
+                <p> <i class="fas fa-envelope"></i>kartikdassarora@gmail.com</p>
+                <p> <i class="fas fa-map-marked-alt"></i>Ludhiana, Punjab, India,141008</p>
+                <div class="share">
+                    <a href="https://www.linkedin.com/in/kartik-arora-119853272/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
+                    <a href="mailto:kartikdassarora@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+                    <a href="https://www.instagram.com/kaarthikarora" class="fab fa-instagram" aria-label="Instagram" target="_blank"></a>
+                    <a href="https://www.instagram.com/pratibimb_designs" class="fab fa-dev" aria-label="Pratibimb Designs" target="_blank"></a>
+                    <a href="https://t.me/kaarthik_arora" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.instagram.com/kaarthikarora"> Kaarthik Dass Arora</a></h1>
+    </section>
+    <!-- footer section ends -->
+
+    <!-- scroll top btn -->
+    <a href="#" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
+
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Intro Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const letters = document.querySelectorAll('.letter');
+            const welcomeText = document.querySelector('.welcome-text');
+            const intro = document.getElementById('intro');
+
+            // Animate letters
+            letters.forEach((letter, index) => {
+                setTimeout(() => {
+                    letter.classList.add('active');
+                }, 100 * index);
+            });
+
+            // Animate welcome text
+            setTimeout(() => {
+                welcomeText.classList.add('active');
+            }, 100 * letters.length);
+
+            // Fade out intro after animation
+            setTimeout(() => {
+                intro.classList.add('fade');
+                setTimeout(() => {
+                    intro.style.display = 'none';
+                }, 500);
+            }, 100 * letters.length + 2000);
+        });
+
+        // Initialize dynamic loading
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('assets/data/banners.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load banners data');
+                }
+                const banners = await response.json();
+                const gallery = document.getElementById('bannerGallery');
+                
+                banners.forEach(banner => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.innerHTML = `
+                        <img src="${banner.image}" alt="${banner.name}">
+                        <div class="gallery-caption">
+                            <h3>${banner.name}</h3>
+                            <p>${banner.description}</p>
+                        </div>
+                    `;
+                    gallery.appendChild(item);
+                });
+            } catch (error) {
+                console.error('Error loading banners:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

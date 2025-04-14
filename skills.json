@@ -1,0 +1,144 @@
+[
+    {
+        "name": "Falling Dark Series",
+        "image": "./assets/images/projects/designs/Falling dark.png",
+        "description": "Premium dark theme artistic creation",
+        "category": "Featured",
+        "featured": true
+    },
+    {
+        "name": "Heaven Collection",
+        "image": "./assets/images/projects/designs/Heaven.png",
+        "description": "Celestial themed premium design",
+        "category": "Featured",
+        "featured": true
+    },
+    {
+        "name": "Nova Artwork",
+        "image": "./assets/images/projects/designs/nova.png",
+        "description": "Space-inspired digital masterpiece",
+        "category": "Featured",
+        "featured": true
+    },
+    {
+        "name": "Blith Premium",
+        "image": "./assets/images/projects/designs/blith2.png",
+        "description": "Contemporary digital art",
+        "category": "Featured",
+        "featured": true
+    },
+    {
+        "name": "About Design",
+        "image": "./assets/images/projects/designs/about-pic.png",
+        "description": "Professional profile design",
+        "category": "Web"
+    },
+    {
+        "name": "Apricot Art",
+        "image": "./assets/images/projects/designs/apricot2.png",
+        "description": "Creative fruit illustration",
+        "category": "Illustration"
+    },
+    {
+        "name": "Blith Series 3.1",
+        "image": "./assets/images/projects/designs/blith3.1.png",
+        "description": "Modern artistic collection",
+        "category": "Digital Art"
+    },
+    {
+        "name": "Chit Design",
+        "image": "./assets/images/projects/designs/chit.jpg",
+        "description": "Minimalist concept art",
+        "category": "Branding"
+    },
+    {
+        "name": "Falling Light",
+        "image": "./assets/images/projects/designs/Falling.png",
+        "description": "Light theme artwork",
+        "category": "Digital Art"
+    },
+    {
+        "name": "Hello Design",
+        "image": "./assets/images/projects/designs/hello.jpg",
+        "description": "Welcome page concept",
+        "category": "Web"
+    },
+    {
+        "name": "Max Redux",
+        "image": "./assets/images/projects/designs/maxredefault.jpg",
+        "description": "Maximalist artwork",
+        "category": "Digital Art"
+    },
+    {
+        "name": "Messi Tribute",
+        "image": "./assets/images/projects/designs/messi wallpaper.jpg",
+        "description": "Sports icon illustration",
+        "category": "Fan Art"
+    },
+    {
+        "name": "Profile Design",
+        "image": "./assets/images/projects/designs/mypic.jpg",
+        "description": "Personal branding",
+        "category": "Personal"
+    },
+    {
+        "name": "Pexels Studio",
+        "image": "./assets/images/projects/designs/pexels-palstro-13278675553-257.jpg",
+        "description": "Studio photography edit",
+        "category": "Photography"
+    },
+    {
+        "name": "Design Collection 1",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-52-39.jpg",
+        "description": "Recent artwork series",
+        "category": "Latest"
+    },
+    {
+        "name": "Design Collection 2",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-52-46.jpg",
+        "description": "Creative portfolio piece",
+        "category": "Latest"
+    },
+    {
+        "name": "Design Collection 3",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-52-52.jpg",
+        "description": "Modern design concept",
+        "category": "Latest"
+    },
+    {
+        "name": "Design Collection 4",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-52-57.jpg",
+        "description": "Contemporary artwork",
+        "category": "Latest"
+    },
+    {
+        "name": "Design Collection 5",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-53-03.jpg",
+        "description": "Digital art showcase",
+        "category": "Latest"
+    },
+    {
+        "name": "Design Collection 6",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-53-10.jpg",
+        "description": "Artistic expression",
+        "category": "Latest"
+    },
+    {
+        "name": "Design Collection 7",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-53-14.jpg",
+        "description": "Creative portfolio",
+        "category": "Latest"
+    },
+    {
+        "name": "Design Collection 8",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-53-34.jpg",
+        "description": "Design exploration",
+        "category": "Latest"
+    },
+    {
+        "name": "Design Collection 9",
+        "image": "./assets/images/projects/designs/photo_2025-03-22_17-53-41.jpg",
+        "description": "Artistic innovation",
+        "category": "Latest"
+    }    
+]

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Designs | Kaarthik Dass Arora</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Favicon -->
+    <link id='favicon' rel="shortcut icon" href="./assets/images/ME.jpg" type="image/x-png">
+    
+    <style>
+        /* Intro Animation Styles */
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .logo-header {
+            text-align: center;
+        }
+
+        .intro-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .letter {
+            color: #000000;
+            font-size: 5rem;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.4s ease;
+            transform: translateY(40px);
+            opacity: 0;
+            margin: 0 3px;
+        }
+
+        .welcome-text {
+            color: #000000;
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            margin-top: 2rem;
+        }
+
+        .welcome-text .credits {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            color: #555;
+        }
+
+        /* Animation classes */
+        .letter.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .welcome-text.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Fade out animation */
+        .intro.fade {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .projects-container {
+            padding: 120px 20px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--main-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-details {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--main-color);
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 0.5rem 1rem;
+            background: var(--main-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            background: var(--hover-color);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            padding: 0.25rem 0.75rem;
+            background: #f0f0f0;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Project image hover effect */
+        .project-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-image .hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-image:hover .hover-overlay {
+            opacity: 1;
+        }
+
+        .project-image .live-demo-btn {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .project-image .live-demo-btn:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false">
+    <!-- Intro Animation -->
+    <div class="intro" id="intro">
+        <div class="logo-header">
+            <div class="intro-logo">
+                <span class="letter">A</span>
+                <span class="letter">R</span>
+                <span class="letter">O</span>
+                <span class="letter">R</span>
+                <span class="letter">A</span>
+                <span class="letter">&nbsp;</span>
+                <span class="letter">S</span>
+                <span class="letter">A</span>
+                <span class="letter">H</span>
+                <span class="letter">A</span>
+                <span class="letter">B</span>
+                <span class="letter">&nbsp;</span>
+                <span class="letter">J</span>
+                <span class="letter">I</span>
+            </div>
+            <div class="welcome-text">
+                <p>Navigating to Beautiful Websites Crafted by Kaarthik Arora</p>
+                <p class="credits">- Crafted with ❤️ by Kaarthik Arora</p>
+            </div>
+        </div>
+    </div>
+    <!-- navbar starts -->
+    <header>
+        <a href="/index.html" class="logo"><i class="fab fa-node-js"></i> Kaarthik Dass Arora</a>
+        <div id="menu" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/index.html#home">Home</a></li>
+                <li><a href="/index.html#about">About</a></li>
+                <li><a href="/index.html#skills">Skills</a></li>
+                <li><a href="/index.html#education">Education</a></li>
+                <li><a href="/index.html#work">Work</a></li>
+                <li><a href="/experience/index.html">Experience</a></li>
+                <li><a href="/index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- navbar ends -->
+
+    <section class="projects" id="projects">
+        <h2 class="heading">Website <span>Projects</span></h2>
+        <div class="projects-grid" id="websiteProjects">
+            <!-- Content will be loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- footer section starts -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>contact info</h3>
+                <p> <i class="fas fa-phone"></i>+91 75298-34770</p>
+                <p> <i class="fas fa-envelope"></i>kartikdassarora@gmail.com</p>
+                <p> <i class="fas fa-map-marked-alt"></i>Ludhiana, Punjab, India,141008</p>
+                <div class="share">
+                    <a href="https://www.linkedin.com/in/kartik-arora-119853272/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
+                    <a href="mailto:kartikdassarora@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+                    <a href="https://www.instagram.com/kaarthikarora" class="fab fa-instagram" aria-label="Instagram" target="_blank"></a>
+                    <a href="https://www.instagram.com/pratibimb_designs" class="fab fa-dev" aria-label="Pratibimb Designs" target="_blank"></a>
+                    <a href="https://t.me/kaarthik_arora" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.instagram.com/kaarthikarora"> Kaarthik Dass Arora</a></h1>
+    </section>
+    <!-- footer section ends -->
+
+    <!-- scroll top btn -->
+    <a href="#" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
+
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Intro Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const letters = document.querySelectorAll('.letter');
+            const welcomeText = document.querySelector('.welcome-text');
+            const intro = document.getElementById('intro');
+
+            // Animate letters
+            letters.forEach((letter, index) => {
+                setTimeout(() => {
+                    letter.classList.add('active');
+                }, 100 * index);
+            });
+
+            // Animate welcome text
+            setTimeout(() => {
+                welcomeText.classList.add('active');
+            }, 100 * letters.length);
+
+            // Fade out intro after animation
+            setTimeout(() => {
+                intro.classList.add('fade');
+                setTimeout(() => {
+                    intro.style.display = 'none';
+                }, 500);
+            }, 100 * letters.length + 2000);
+        });
+
+        // Initialize dynamic loading
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('assets/data/websites.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load website data');
+                }
+                const websites = await response.json();
+                const projectsGrid = document.getElementById('websiteProjects');
+                
+                websites.forEach(website => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+                    
+                    card.innerHTML = `
+                        <div class="project-image">
+                            <img src="${website.image}" alt="${website.name}">
+                            <div class="hover-overlay">
+                                <a href="${website.liveUrl}" class="live-demo-btn" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Live
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">${website.name}</h3>
+                            <p class="project-description">${website.description}</p>
+                            <div class="tech-stack">
+                                ${website.techStack ? website.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('') : ''}
+                            </div>
+                            <div class="project-links">
+                                <a href="${website.liveUrl}" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    projectsGrid.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading websites:', error);
+            }
+        });
+    </script>
+</body>
+</html>
